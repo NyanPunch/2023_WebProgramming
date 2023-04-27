@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function mySplit(str, separator){
+                var tempArr = [""];
+                var j=0;
+                for(var i=0;i<str.length;i++){
+                    if(str[i] == separator){
+                        tempArr.push("");
+                        j++;
+                    }else{
+                        tempArr[j] += str[i];
+                    }
+                }
+                return tempArr;
+            }
+            var str = "A-B-C";
+            var separator = "-";
+            var result = mySplit(str, separator);
+    
+            for (var i=0; i<result.length; i++){
+               document.write('array[' + i + ']' + '=' + result[i] + '<br>')
+            }
+         </script>
+    </head>
+    <body>
+    </body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+        border:1px solid red;
+        width:437px;
+        height:300px;
+        text-align:center;
+        color:chocolate;
+        }
+        .text_computer{ font-size:50px; }
+        .btn_rock{ background-color:rgb(255,0,0);}
+        .btn_paper{ background-color:rgb(0,100,0);}
+        .btn_sissors{ background-color:rgb(0,0,255);}
+        .btn_base { border:none; color:white; padding: 15px 32px; text-decoration:none; font-size:16px;}
+    </style>
+    <script>
+    function computer_result(my_result){
+      var computer_text_element = document.getElementById("computer_text");
+      var result = document.getElementById("result_text");
+      let random_value = Math.floor(Math.random()*3); // -- random_value = 0 or 1 or 2
+      
+      if (random_value==0){ // ----------------------------------------- if random_value is 0, change computer Text as “Rock(바위)!”
+         computer_text_element.innerText = "Rock(바위)!";
+         if (my_result=='rock') {
+            result.innerText = "비겼습니다!";
+         }  
+         else if (my_result=='sissor') {
+            result.innerText = "졌습니다!";
+         } 
+         else {
+            result.innerText = "이겼습니다!";
+         } 
+      }
+      else if (random_value==1){
+        computer_text_element.innerText = "Sissors(가위)!";  // ---------------------------------- if random_value is 1, change computer Text as “Sissor(가위) !”
+        if (my_result=='rock') {
+            result.innerText = "이겼습니다!";
+         }  
+         else if (my_result=='sissor') {
+            result.innerText = "비겼습니다!";
+        } 
+         else {
+            result.innerText = "졌습니다!";
+        }
+      }
+      else{ // ------------------------------------------------------------------ if random_value is 1, change computer Text as “Paper(보) !”
+        computer_text_element.innerText = "Paper(보)!";
+        if (my_result=='rock') {
+            result.innerText = "졌습니다!";
+         }  
+         else if (my_result=='sissor') {
+            result.innerText = "이겼습니다!";
+        } 
+         else {
+           result.innerText = "비겼습니다!";
+        }
+    }
+}
+    </script>
+</head>
+<body>
+    <div class="container">
+        <a class="text_computer" id="computer_text">Rock!<br>Sissors!<br>Paper!</a>
+    </div>
+    <div>
+      <button class="btn_rock btn_base" onclick="computer_result('rock')">Rock(바위)</button>
+      <button class="btn_sissors btn_base" onclick="computer_result('sissor')">Sissor(가위)</button>
+      <button class="btn_paper btn_base" onclick="computer_result('paper')">Paper(보)</button>
+    </div>
+       <div>
+           <h1 id="result_text">result: </h1>
+       </div>
+    </body>
+</html>

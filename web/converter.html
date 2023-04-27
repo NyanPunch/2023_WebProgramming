@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function Car(model, speed, color){
+                this.model = model;
+                this.speed = speed;
+                this.color = color;
+                this.brake = function(){
+                    this.speed -= 10;
+                }
+                this.accel = function(){
+                    this.speed += 10;
+                }
+            }
+            mycar = new Car("520d", 10, "blue");
+            document.write(mycar.model+mycar.color+mycar.speed+'<br>');
+            s = "a,b,c,d,e,f,g";
+            array = s.split(',');
+            for(i=0;i<7;i++){
+                document.write(i +'' + array[i]+'<br>');
+            }
+        </script>
+    </head>
+    <body>
+        <table border="3">
+            <tr>
+                <td>celcius temperature</td>
+                <td>fahrenheit</td>
+            </tr>
+            <script>
+                for(celsius =0;celsius<=10;celsius=celsius+1){
+                    document.write("<tr><td>"+celsius+"</td><td>"+((celsius*9.0/5)+32)+"</td></tr>");
+                }
+            </script>
+        </table>
+    </body>
+</html>

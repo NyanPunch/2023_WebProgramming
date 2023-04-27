@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script>
+        var msg="";
+        var time = new Date().getHours();
+        if(time <12){
+            msg = "Good Morning";
+        }
+        else if(time<18){
+            msg = "Good Afternoon";
+        }
+        else{
+            msg = "Good Evening";
+        }
+        alert(msg);
+    </script>
+    <style>
+        #a{
+            visibility: hidden;
+        }
+        #b{
+            visibility: visible;
+        }
+        img{opacity: .4;}
+        img:hover{opacity: 1.0;}
+        div{
+            width: 100px;
+            height: 50px;
+            background-color: yellow;
+            border: 1px solid black;
+            transition: width 1s;
+        }
+        div:hover{
+            width: 200px;
+        }
+    </style>
+    </head>
+    <body>
+        <div>Hover over your mouse.</div>
+        <img id="a" src="CBNU_logo.jpg" width="100px" height="100px">
+        <img id="b" src="CBNU_logo.jpg" width="100px" height="100px">
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            var converted = hours + '시' + minutes + '분' + seconds + '초'
+            document.write(converted +"<br>")
+
+            var s = "hElLo WoRLd";
+            var lower = s.toLowerCase();
+            var upper = s.toUpperCase();
+            var capitalized = s[0].toUpperCase() + s.slice(1).toLowerCase();
+
+            document.write(lower+"<br>")
+            document.write(upper+"<br>")
+            document.write(capitalized+"<br>")
+
+            var s = "A;B;C;D;E";
+            var splited = s.split(';')
+            for(i=0;i<splited.length;i++){
+                document.writeln((i+1)+':'+splited[i]+'<br>');
+            }
+        </script>
+    </head>
+    <body>
+        <input type="date" id="pdate">
+        <button onclick="checkDate()">search</button>
+    </body>
+</html>

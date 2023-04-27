@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function calc(){
+                var x = document.getElementById("x").value;
+                var y = document.getElementById("y").value;
+                var sum = parseInt(x)+parseInt(y);
+                document.getElementById("sum").value = sum;
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            0<input id="x" type="range" min="0" max="100">100
+             + <input id="y" type="text"> =
+            <input id="sum">
+            <br>
+            <input type="button" value="제출" onclick="calc();">
+        </form>
+        <form>
+            <input type="text" name="name" required placeholder="firstname">
+        </form>
+    </body>
+</html> 
