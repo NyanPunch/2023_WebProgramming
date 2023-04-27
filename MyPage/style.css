@@ -52,3 +52,11 @@ li a:hover{
     font-weight: bold;
     color: black;
 }
+#product1{
+    margin: 2px;
+    float: left;
+}
+#product2{
+    margin: 2px;
+    float: center;
+}

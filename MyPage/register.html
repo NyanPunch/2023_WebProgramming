@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body {
+                height: 100%;
+                background-color: bisque;
+            }
+            span {
+                display: inline-block;
+                width: 120px;
+            }
+            input {
+                display: inline-block;
+                width: 160px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <form method="post"> <!-- action="process.jsp" -->
+                <fieldset>
+                    <legend>회원정보입력</legend>
+                    <span>아이디</span>
+                    <input type="text" name="name" required><br>
+                    <span>비밀번호</span> 
+                    <input type="password" name="password1" required><br>
+                    <span>비밀번호 재입력</span>
+                    <input type="password" name="password2" required><br>
+                    <span>이름</span>
+                    <input type="text" name="name" required><br>
+                    <span>전화번호</span>
+                    <input type="tel" name="tel" required><br>
+                    <span>이메일</span>
+                    <input type="email" name="email" required><br>
+                    <span>생년월일</span>
+                    <input type="date" name="dob" required><br>
+                    남<input type="radio" name="gender" value="male" required><br>
+                    여<input type="radio" name="gender" value="female" required><br>
+                </fieldset>
+                <input type="submit" name="submit" value="제출">
+                <input type="reset" name="reset" value="초기화">
+            </form>
+        </div>
+    </body>
+</html>
