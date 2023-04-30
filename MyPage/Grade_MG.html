@@ -6,56 +6,68 @@
         <script src="MyPage.js"></script>
     </head>
     <body>
+        <!-- header -->
         <div id="header">
-            <h3>Master Grade</h3>
+            <a href="main.html"><h2> Gundam Info </h2></a>
         </div>
         <!-- navigation -->
         <div id="nav" style="height:fit-content">
-            <small><a href="main.html">
-                <p class="center" style="margin:0px; padding:0px;">
-                    [Home]
-                </p>
-            </a></small>
-            <!-- login -->
-            <div id="login">
-                <form action="" method="post">
-                    아이디 <input type="text" id="id" required placeholder="아이디"><br>
-                    비밀번호 <input type="password" id="pw" required placeholder="비밀번호"><br>
-                    <input type="submit" value="로그인" onclick="Login_()">
-                    <a href="register.html" target="_blank" id="register">회원가입</a>
-                </form>
-            </div>
-            <!--Grade information-->
+            <!--Grade & information-->
             <ul id="Grade">
                 <li><a href="Grade_PG.html">Perfect Grade</a></li>
                 <li><a href="Grade_MG.html">Master Grade</a></li>
                 <li><a href="Grade_RG.html">Real Grade</a></li>
                 <li><a href="Grade_HG.html">High Grade</a></li>
-            </ul>
-            <!--information-->
-            <ul id="infomation">
-                <li><a href="aboutme.html">About Me</a></li>
                 <li><a href="news.html">NEWS</a></li>
+                <li><a href="aboutme.html">About Me</a></li>
                 <li><a href="#"></a></li>
             </ul>
+            <!-- login -->
+            <div id="login" class="id">
+                <form action="" method="post">
+                    <span style="font-size:small">아이디 <input type="text" id="id" required placeholder="아이디"><br>
+                    비밀번호 <input type="password" id="pw" required placeholder="비밀번호"><br>
+                    <input type="submit" value="로그인" onclick="Login_()">
+                    <a href="register.html" target="_blank" id="register">회원가입</a>
+                    </span>
+                </form>
+            </div>
         </div>
-        <div id="contents">
+        <!-- contents -->
+        <div id="contents" class="center">
+            <!-- search -->
+            <div style="float:left">
+                <form action="" method="get">
+                    <input id="search" type="search" placeholder="검색어를 입력하세요." name="search">
+                    <input type="button" onclick="Search()" value="검색">
+                </form>
+            </div>
+            <br>         
             <h3>마스터 그레이드란</h3>
             <p>
-                정교한 내부 프레임으로 최고의 프로포션과 자유자재의 가동을 추구하는
-                <br>건프라의 진화를 표현하는 브랜드
+                정교한 내부 프레임으로 최고의 프로포션과 자유자재의 가동을 추구하는 건프라의 진화를 표현
             </p>
-            <p></p>
-            <div id="product1">
-                <img alt="PSYCHO ZAKU" width="300" src="https://bandai-hobby.net/images/159_1714_s_3kyrmzz4px43wvu7iaumbmft1yu9.jpg">
+            <h3>특징</h3>
+            <p>
+                1/100 크기로 평균 30cm의 크기를 가진다.<br>
+                내부 프레임에 외부 장갑을 덧 붙였기때문에 다양한 자세를 취할 수 있다.<br>
+                거의 대부분의 색이 모두 부품분할로 재현되어 원작과 같은 느낌을 낼 수 있다.
+            </p>
+            <!-- products -->
+            <div id="product">
+                <a target="_blank" href="https://bandai-hobby.net/temp/o_1b7l6ap1bf8l6qa17gheriibh7.jpg">
+                    <img alt="PSYCHO ZAKU" src="https://bandai-hobby.net/images/159_1714_s_3kyrmzz4px43wvu7iaumbmft1yu9.jpg">
+                </a>
                 <p>
                     제품명: MS-06R 사이코자쿠<br>
                     발매 시기: 2016년 12월 16일<br>
                     발매 가격: 108,000원
                 </p>
             </div>
-            <div id="product2">
-                <img alt="BUSTER GUNDAM" width="300" src="https://bandai-hobby.net/images/157_2733_s_mu8zig5qdw8n5lc9fq13i7mto3pp.jpg">
+            <div id="product">
+                <a target="_blank" href="https://bandai-hobby.net/images/153_2733_s_qfftha5x7l51bq414725i9053fql.jpg">
+                    <img alt="BUSTER GUNDAM" src="https://bandai-hobby.net/images/157_2733_s_mu8zig5qdw8n5lc9fq13i7mto3pp.jpg">
+                </a>
                 <p>
                     제품명: 버스터건담<br>
                     발매 시기: 2012년 09월 22일<br>

@@ -4,66 +4,77 @@
         <title>Perfect Grade</title>
         <link type="text/css" rel="stylesheet" href="MyPage.css">
         <script src="MyPage.js"></script>
+        <style>
+            .present {
+                color : blue;
+            }
+            
+
+        </style>
     </head>
     <body>
+        <!-- header -->
         <div id="header">
-            <h3>Perfect Grade</h3>
+            <a href="main.html"><h2> Gundam Info </h2></a>
         </div>
         <!-- navigation -->
         <div id="nav" style="height:fit-content">
-            <small><a href="main.html">
-                <p class="center" style="margin:0px; padding:0px;">
-                    [Home]
-                </p>
-            </a></small>
-            <!-- login -->
-            <div id="login">
-                <form action="" method="post">
-                    아이디 <input type="text" id="id" required placeholder="아이디"><br>
-                    비밀번호 <input type="password" id="pw" required placeholder="비밀번호"><br>
-                    <input type="submit" value="로그인" onclick="Login_()">
-                    <a href="register.html" target="_blank" id="register">회원가입</a>
-                </form>
-            </div>
-            <!--Grade information-->
+            <!--Grade & information-->
             <ul id="Grade">
                 <li><a href="Grade_PG.html">Perfect Grade</a></li>
                 <li><a href="Grade_MG.html">Master Grade</a></li>
                 <li><a href="Grade_RG.html">Real Grade</a></li>
                 <li><a href="Grade_HG.html">High Grade</a></li>
-            </ul>
-            <!--information-->
-            <ul id="infomation">
-                <li><a href="aboutme.html">About Me</a></li>
                 <li><a href="news.html">NEWS</a></li>
+                <li><a href="aboutme.html">About Me</a></li>
                 <li><a href="#"></a></li>
             </ul>
+            <!-- login -->
+            <div id="login" class="id">
+                <form action="" method="post">
+                    <span style="font-size:small">아이디 <input type="text" id="id" required placeholder="아이디"><br>
+                    비밀번호 <input type="password" id="pw" required placeholder="비밀번호"><br>
+                    <input type="submit" value="로그인" onclick="Login_()">
+                    <a href="register.html" target="_blank" id="register">회원가입</a>
+                    </span>
+                </form>
+            </div>
         </div>
-        <div id="contents">
+        <!-- contents -->
+        <div id="contents" class="center">
+            <!-- search -->
+            <div style="float:left">
+                <form action="" method="get">
+                    <input id="search" type="search" placeholder="검색어를 입력하세요." name="search">
+                    <input type="button" onclick="Search()" value="검색">
+                </form>
+            </div>
+            <br>
             <h3>퍼펙트 그레이드란</h3>
             <p>최신 기술을 탑재하여 내부 구조 및 외관 조형 모두 건프라의 궁극적인 모습을 구현하는 최고의 브랜드</p>
-            <p>등급 중 가장 큰 크기이며 가장 비싼 가격에 발매된다.</p>
-            <form action="" method="get">
-                <input id="search" type="search" placeholder="검색어를 입력하세요." name="search">
-                <input type="button" onclick="search()" value="검색">
-            </form>
-            <div id="product1">
-                <img alt="RX-78-2_PG" width="300" src="https://bandai-hobby.net/images/196_4283_s_x7ic5nrnppkfm6tuvbtkqiijwvxv.jpg">
+            <h3>특징</h3>
+            <p>
+                1/60으로 등급 중 가장 큰 크기이며 가장 비싼 가격에 발매된다.<br>
+                제품 또한 주인공기와 가장 인기있는 제품만 제작되어 소량의 제품들로 이뤄졌다.
+            </p>
+            <div id="product">
+                <a target="_blank" href="https://bandai-hobby.net/images/190_4283_s_huh6kzxjyool60ugjnd3msjhw75l.jpg">
+                    <img alt="RX-78-2_PG" src="https://bandai-hobby.net/images/196_4283_s_x7ic5nrnppkfm6tuvbtkqiijwvxv.jpg">
+                </a>
                 <p>
-                    제품명: UNLEASHED RX-78-2 건담
-                    <br>
-                    발매 시기: 2020년 12월 19일
-                    <br>
+                    제품명: UNLEASHED RX-78-2 건담<br>
+                    발매 시기: 2020년 12월 19일<br>
                     발매 가격: 300,000원
                 </p>
             </div>
-            <div id="product2">
-                <img alt="RX-0_PG" width="300" src="https://bandai-hobby.net/images/189_1223_s_ip3guzs8nn2ndv185kgo66xv8b52.jpg">
+            
+            <div id="product">
+                <a target="_blank" href="https://bandai-hobby.net/images/156_1223_s_xxy91utsr4x3hn5bf14efnxdizrc.jpg">
+                    <img alt="RX-0_PG" src="https://bandai-hobby.net/images/189_1223_s_ip3guzs8nn2ndv185kgo66xv8b52.jpg">
+                </a>
                 <p>
-                    제품명: RX-0 유니콘 건담
-                    <br>
-                    발매 시기: 2014년 12월 13일
-                    <br>
+                    제품명: RX-0 유니콘 건담<br>
+                    발매 시기: 2014년 12월 13일<br>
                     발매 가격: 240,000원
                 </p>
             </div>

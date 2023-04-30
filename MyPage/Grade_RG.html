@@ -6,66 +6,70 @@
         <script src="MyPage.js"></script>
     </head>
     <body>
+        <!-- header -->
         <div id="header">
-            <h3>Real Grade</h3>
+            <a href="main.html"><h2> Gundam Info </h2></a>
         </div>
         <!-- navigation -->
         <div id="nav" style="height:fit-content">
-            <small><a href="main.html">
-                <p class="center" style="margin:0px; padding:0px;">
-                    [Home]
-                </p>
-            </a></small>
-            <!-- login -->
-            <div id="login">
-                <form action="" method="post">
-                    아이디 <input type="text" id="id" required placeholder="아이디"><br>
-                    비밀번호 <input type="password" id="pw" required placeholder="비밀번호"><br>
-                    <input type="submit" value="로그인" onclick="Login_()">
-                    <a href="register.html" target="_blank" id="register">회원가입</a>
-                </form>
-            </div>
-            <!--Grade information-->
+            <!--Grade & information-->
             <ul id="Grade">
                 <li><a href="Grade_PG.html">Perfect Grade</a></li>
                 <li><a href="Grade_MG.html">Master Grade</a></li>
                 <li><a href="Grade_RG.html">Real Grade</a></li>
                 <li><a href="Grade_HG.html">High Grade</a></li>
-            </ul>
-            <!--information-->
-            <ul id="infomation">
-                <li><a href="aboutme.html">About Me</a></li>
                 <li><a href="news.html">NEWS</a></li>
+                <li><a href="aboutme.html">About Me</a></li>
                 <li><a href="#"></a></li>
             </ul>
+            <!-- login -->
+            <div id="login" class="id">
+                <form action="" method="post">
+                    <span style="font-size:small">아이디 <input type="text" id="id" required placeholder="아이디"><br>
+                    비밀번호 <input type="password" id="pw" required placeholder="비밀번호"><br>
+                    <input type="submit" value="로그인" onclick="Login_()">
+                    <a href="register.html" target="_blank" id="register">회원가입</a>
+                    </span>
+                </form>
+            </div>
         </div>
-        <div id="contents">
+        <!-- contents -->
+        <div id="contents" class="center">
+            <!-- search -->
+            <div style="float:left">
+                <form action="" method="get">
+                    <input id="search" type="search" placeholder="검색어를 입력하세요." name="search">
+                    <input type="button" onclick="Search()" value="검색">
+                </form>
+            </div>
+            <br>
             <h3>리얼 그레이드란</h3>
             <p>치밀한 부품 구성과 질감 표현을 실현하며, 모빌슈트를 만드는 즐거움을 1/144크기로 응축한 브랜드</p>
             <h3>특징</h3>
             <p>
-                RG의 가장 큰 특징은 외장 디테일의 밀도는 전등급 최고수준이라는 점이다.<br>
-                이 부분에선 MG와 물론이고 PG와도 겨룰 수 있을 정도로 엄청난 퀄리티를 자랑한다.
+                RG의 가장 큰 특징은 외장 디테일의 밀도는 전 등급 최고수준이라는 점이다.<br>
+                이 부분에선 MG와 물론이고 PG와도 겨룰 수 있을 정도로 엄청난 퀄리티를 자랑한다.<br>
+                1/144로 HG와 같은 크기지만 디테일 적인 면과 다양한 자세가 가능하다는 차별점을 갖는다.
             </p>
 
-            <div id="product1">
-                <img alt="RG_Hi-v" width="300" src="https://bandai-hobby.net/images/196_4475_s_o3b7s58tcpaz9uz41vhh15aalqr4.jpg">
+            <div id="product">
+                <a target="_blank" href="https://bandai-hobby.net/images/192_4475_s_5138p5uujqomg50ix735rc5f3geg.jpg">
+                    <img alt="RG_Hi-v" src="https://bandai-hobby.net/images/196_4475_s_o3b7s58tcpaz9uz41vhh15aalqr4.jpg">
+                </a>
                 <p>
-                    제품명: Hi-v 건담
-                    <br>
-                    발매 시기: 2021년 09월 11일
-                    <br>
+                    제품명: Hi-v 건담<br>
+                    발매 시기: 2021년 09월 11일<br>
                     발매 가격: 59,400원
                 </p>
             </div>
-            <div id="product2">
-                <img alt="OZ_00MS_RG" width="300" src="https://bandai-hobby.net/images/189_2229_s_a5gg3s47lvgcd56u0bwoyfhyn3an.jpg">
+            <div id="product">
+                <a target="_blank" href="https://bandai-hobby.net/images/153_2229_s_c8g7affy0w3q1povhl42vr3zkdt0.jpg">
+                    <img alt="OZ_00MS_RG" src="https://bandai-hobby.net/images/189_2229_s_a5gg3s47lvgcd56u0bwoyfhyn3an.jpg">
+                </a>
                 <p>
-                    제품명: 톨기스 EW
-                    <br>
-                    발매 시기: 2018년 04월 28일
-                    <br>
-                    발매 가격: 33000원
+                    제품명: 톨기스 EW<br>
+                    발매 시기: 2018년 04월 28일<br>
+                    발매 가격: 33000원<br>
                 </p>
             </div>
 

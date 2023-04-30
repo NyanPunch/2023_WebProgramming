@@ -4,68 +4,74 @@
         <title>High Grade</title>
         <link type="text/css" rel="stylesheet" href="MyPage.css">
         <script src="MyPage.js"></script>
+        <style>
+            
+        </style>
+        
     </head>
     <body>
         <!-- header -->
         <div id="header">
-            <a href="#">
-                <h3>High Grade</h3>
-            </a>
+            <a href="main.html"><h2> Gundam Info </h2></a>
         </div>
         <!-- navigation -->
         <div id="nav" style="height:fit-content">
-            <small><a href="main.html">
-                <p class="center" style="margin:0px; padding:0px;">
-                    [Home]
-                </p>
-            </a></small>
-            <!-- login -->
-            <div id="login">
-                <form action="" method="post">
-                    아이디 <input type="text" id="id" required placeholder="아이디"><br>
-                    비밀번호 <input type="password" id="pw" required placeholder="비밀번호"><br>
-                    <input type="submit" value="로그인" onclick="Login_()">
-                    <a href="register.html" target="_blank" id="register">회원가입</a>
-                </form>
-            </div>
-            <!--Grade information-->
+            <!--Grade & information-->
             <ul id="Grade">
                 <li><a href="Grade_PG.html">Perfect Grade</a></li>
                 <li><a href="Grade_MG.html">Master Grade</a></li>
                 <li><a href="Grade_RG.html">Real Grade</a></li>
                 <li><a href="Grade_HG.html">High Grade</a></li>
-            </ul>
-            <!--information-->
-            <ul id="infomation">
-                <li><a href="aboutme.html">About Me</a></li>
                 <li><a href="news.html">NEWS</a></li>
+                <li><a href="aboutme.html">About Me</a></li>
                 <li><a href="#"></a></li>
             </ul>
+            <!-- login -->
+            <div id="login" class="id" style="float:right">
+                <form action="" method="post">
+                    <span style="font-size:small">아이디 <input type="text" id="id" required placeholder="아이디"><br>
+                    비밀번호 <input type="password" id="pw" required placeholder="비밀번호"><br>
+                    <input type="submit" value="로그인" onclick="Login_()">
+                    <a href="register.html" target="_blank" id="register">회원가입</a>
+                    </span>
+                </form>
+            </div>
         </div>
         <!-- contents -->
-        <div id="contents" style="height:min-content">
+        <div id="contents" class="center" style="height:min-content">
+            <!-- search -->
+            <div style="float:left">
+                <form action="" method="get">
+                    <input id="search" type="search" placeholder="검색어를 입력하세요." name="search">
+                    <input type="button" onclick="Search()" value="검색">
+                </form>
+            </div>
+            <br>
             <h3>하이 그레이드란</h3>
             <p>건프라의 스탠다드 브랜드로 풍부한 상품 라인업이 특징이다.</p>
-            <p>하이 그레이드 제품군은 '양호한 가성비와 대부분의 모델러가 만족할 만한 품질'을 목표로 제작되고 있다.<br> 
+            <h3>특징</h3>
+            <p>
+                1/144 크기인 HG는 '양호한 가성비와 대부분의 모델러가 만족할 만한 품질'을 목표로 제작되고 있다.<br> 
                 부품 분할 및 시스템 인젝션 사출성형을 통해 가조립만으로도 설정색에 가깝게 완성할 수 있을 뿐 아니라 <br>
                 관절의 가동성이 우수해 다양한 포즈를 취할 수 있는 양품들이다.
             </p>
-
-            <div id="product1">
-                <img alt="GUNDAM AERIAL" width="300" src="https://bandai-hobby.net/images/193_5174_s_bbx2yrw643xev4f2cc11j9m3b5ke.jpg">
+            <div id="product">
+                <a target="_blank" href="https://bandai-hobby.net/images/153_5174_s_yhljrgiro9l7tgnkonzj29r3bumu.jpg">
+                    <img alt="GUNDAM AERIAL" src="https://bandai-hobby.net/images/193_5174_s_bbx2yrw643xev4f2cc11j9m3b5ke.jpg">
+                </a>
                 <p>
                     제품명: 건담 에어리얼<br>
                     발매 시기: 2022년 10월 01일<br>
                     발매 가격: 15,600원
                 </p>
             </div>
-            <div id="product2">
-                <img alt="LFRITH UR" width="300" src="https://bandai-hobby.net/images/190_5236_s_6ayfb80mq4ma54siz6wrp6wapu1f.jpg">
+            <div id="product">
+                <a target="_blank" href="https://bandai-hobby.net/images/189_5236_s_3tbd02ge53zxwtwwgznihxrp3mun.jpg">
+                    <img alt="LFRITH UR" src="https://bandai-hobby.net/images/190_5236_s_6ayfb80mq4ma54siz6wrp6wapu1f.jpg">
+                </a>
                 <p>
-                    제품명: 건담 루브리스울
-                    <br>
-                    발매 시기: 2023년 03월 04일
-                    <br>
+                    제품명: 건담 루브리스울<br>
+                    발매 시기: 2023년 03월 04일<br>
                     발매 가격: 22,800원
                 </p>
             </div>

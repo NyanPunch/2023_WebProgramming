@@ -4,46 +4,40 @@
         <title>Gundam Info</title>
         <link type="text/css" rel="stylesheet" href="MyPage.css">
         <script src="MyPage.js"></script>
+        <style>
+        </style>
     </head>
     <body>
         <!-- header -->
         <div id="header">
-            <a href="#"><h2> Gundam Info </h2></a>
+            <a href="main.html"><h2> Gundam Info </h2></a>
         </div>
         <!-- navigation -->
         <div id="nav" style="height:fit-content">
-            <small>
-                <a href="#">
-                    <p class="center" style="margin:0px; padding:0px;">
-                        [Home]
-                    </p>
-                </a>
-            </small>
-            <!-- login -->
-            <div id="login">
-                <form action="" method="post">
-                    아이디 <input type="text" id="id" required placeholder="아이디"><br>
-                    비밀번호 <input type="password" id="pw" required placeholder="비밀번호"><br>
-                    <input type="submit" value="로그인" onclick="Login_()">
-                    <a href="register.html" target="_blank" id="register">회원가입</a>
-                </form>
-            </div>
-            <!--Grade information-->
+            <!--Grade & information-->
             <ul id="Grade">
                 <li><a href="Grade_PG.html">Perfect Grade</a></li>
                 <li><a href="Grade_MG.html">Master Grade</a></li>
                 <li><a href="Grade_RG.html">Real Grade</a></li>
                 <li><a href="Grade_HG.html">High Grade</a></li>
-            </ul>
-            <!--information-->
-            <ul id="infomation">
-                <li><a href="aboutme.html">About Me</a></li>
                 <li><a href="news.html">NEWS</a></li>
+                <li><a href="aboutme.html">About Me</a></li>
                 <li><a href="#"></a></li>
             </ul>
+            <!-- login -->
+            <div id="login" class="id">
+                <form action="" method="post">
+                    <span style="font-size:small">아이디 <input type="text" id="id" required placeholder="아이디"><br>
+                    비밀번호 <input type="password" id="pw" required placeholder="비밀번호"><br>
+                    <input type="submit" value="로그인" onclick="Login_()">
+                    <a href="register.html" target="_blank" id="register">회원가입</a>
+                    </span>
+                </form>
+            </div>
         </div>
         <!-- contents -->
-        <div id="contents">
+        <div id="contents" class="center">
+            <!-- 본문 -->
             <article>
                 <h3>건담 프라모델이란</h3>
                 <p>
@@ -58,11 +52,11 @@
                     본격적인 모형 제작을 즐기는 팬의 수도 상당하다.
                 </p>    
             </article>
-            <div id="product2">
+            <div id="product">
                 <a target="_blank" href="https://m.bnkrmall.co.kr/imgs/goods/category/gunpla_guide.jpg">
-                    <img height="250" alt="건담 등급별 크기" src="https://m.bnkrmall.co.kr/imgs/goods/category/gunpla_guide.jpg">
+                    <img alt="건담 등급별 크기" src="https://m.bnkrmall.co.kr/imgs/goods/category/gunpla_guide.jpg">
                 </a>
-            <p>&lt;건담 등급별 크기 비교&gt;</p>
+            <p>건담 등급별 크기 비교</p>
             </div>
         </div>
         <!-- footer -->

@@ -9,7 +9,12 @@ function Login_() {
     }
 }
 
-function search() {
-    var str = HTMLInputElement.value;
-    document.write(str);
+function Search() {
+    var str = document.getElementById("search").value;
+    if(str==""){
+        alert('검색어를 입력하세요');
+    }
+    else {
+        alert(str);
+    }
 }

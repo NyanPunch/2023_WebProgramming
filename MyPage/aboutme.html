@@ -6,51 +6,46 @@
         <script src="MyPage.js"></script>
     </head>
     <body>
+        <!-- header -->
         <div id="header">
-            <h3>About Me</h3>
+            <a href="main.html"><h2> Gundam Info </h2></a>
         </div>
         <!-- navigation -->
         <div id="nav" style="height:fit-content">
-            <small>
-                <a href="main.html">
-                    <p class="center" style="margin:0px; padding:0px;">
-                        [Home]
-                    </p>
-                </a>
-            </small>
-            <!-- login -->
-            <div id="login">
-                <form action="" method="post">
-                    아이디 <input type="text" id="id" required placeholder="아이디"><br>
-                    비밀번호 <input type="password" id="pw" required placeholder="비밀번호"><br>
-                    <input type="submit" value="로그인" onclick="Login_()">
-                    <a href="register.html" target="_blank" id="register">회원가입</a>
-                </form>
-            </div>
-            <!--Grade information-->
+            <!--Grade & information-->
             <ul id="Grade">
                 <li><a href="Grade_PG.html">Perfect Grade</a></li>
                 <li><a href="Grade_MG.html">Master Grade</a></li>
                 <li><a href="Grade_RG.html">Real Grade</a></li>
                 <li><a href="Grade_HG.html">High Grade</a></li>
-            </ul>
-            <!--information-->
-            <ul id="infomation">
-                <li><a href="aboutme.html">About Me</a></li>
                 <li><a href="news.html">NEWS</a></li>
+                <li><a href="aboutme.html">About Me</a></li>
                 <li><a href="#"></a></li>
             </ul>
+            <!-- login -->
+            <div id="login" class="id">
+                <form action="" method="post">
+                    <span style="font-size:small">아이디 <input type="text" id="id" required placeholder="아이디"><br>
+                    비밀번호 <input type="password" id="pw" required placeholder="비밀번호"><br>
+                    <input type="submit" value="로그인" onclick="Login_()">
+                    <a href="register.html" target="_blank" id="register">회원가입</a>
+                    </span>
+                </form>
+            </div>
         </div>
-        <div id="contents" class="center" style="height:fit-content">
+        <!-- contents -->
+        <div id="contents" class="center">   
             <br>
             <img alt="" width="300" height="300" src="https://www.chungbuk.ac.kr/resource/DATA/board/201304/E91C01365489275602.png">
             <br>
             <h1>김 경 민</h1>
             <p>E-mail : kkmlouis@gmail.com</p>
             <p>Tel : 010-2798-7749</p>
-            <p>Address : 충청남도 천안시 동남구 풍세로 770 </p>
+            <p>Major : 충북대학교 소프트웨어학과</p>
             <p>
                 건담 프라모델 조립과 수집에 관심을 가져 이 홈페이지를 만들게 되었다.
+                <br>자료출처: <a target="_blank" href="https://bandai-hobby.net/">반다이 하비</a>
+                <a target="_blank" href="https://www.bnkrmall.co.kr/main/index.do">반다이남코 코리아몰</a>
             </p>
         </div>
         <!-- footer -->
