@@ -1,5 +1,5 @@
 body {
-    background-color: bisque;
+    background-color: rgb(255, 218, 173);
     font-family:Arial, '맑은 고딕', sans-serif;
 }
 #header{
@@ -27,11 +27,10 @@ body {
 }
 #footer{
     text-align: center;
-    /* background-color: gray; */
-    height: 40px;
+    height: 20px;
     padding: 10px;
     clear: both;
-    margin: 10px;
+    /* margin: 10px; */
     content: 10px;
     font-size: small;
 }
@@ -79,9 +78,9 @@ li a:hover{
     margin: 1px;
     right: 1%;
     top: 24%;
-    width: auto;
+    width: 130px;
     border-radius: .5rem;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     background-color: aliceblue;
 }
 #id, #pw{

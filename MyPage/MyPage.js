@@ -1,7 +1,10 @@
 function Login_() {
     var ID = document.getElementById("id").value;
     var PW = document.getElementById("pw").value;
-    if(PW == ''){
+    if(ID==''){
+        alert("아이디를 입력하세요.")
+    }
+    else if(PW == ''){
         alert("비밀번호를 입력하세요");
     }
     else {
