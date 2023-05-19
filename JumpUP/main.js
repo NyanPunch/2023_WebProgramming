@@ -59,6 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 platform.bottom -= 4
                 let visual = platform.visual
                 visual.style.bottom = platform.bottom + 'px'
+                /* 플랫폼이 바닥에 닿을 시 */
+                if(platform.bottom < -3) {
+                    let firstPlatform = platforms[0].visual
+                    firstPlatform.classList.remove('platform')
+                    platforms.shift()
+                    console.log(platforms)
+                    let newPlatform = new Platform(600) //상단에 새 플랫폼 생성
+                    platforms.push(newPlatform) //새 플랫폼을 리스트에 삽입
+                }
             })
         }
     }
@@ -126,7 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         MovingRight = false
         clearInterval(leftTimerID)
         clearInterval(rightTimerID)
-        
+
     }
     /* 왼쪽으로 조작 시 */
     function moveLeft(){
