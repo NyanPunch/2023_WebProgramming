@@ -10,11 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let platforms = []          //플랫폼 리스트
     let upTimerID               //점프시간
     let downTimerID             //추락시간
+    let leftTimerID             
+    let rightTimerID
     let isJumping = true
     let MovingLeft = false
     let MovingRight = false
-    let leftTimerID
-    let rightTimerID
+    let score = 0
+    let ActionTime = 20         //setInterval 시간 조절
 
     /* jumper를 그리드에 생성 */
     function createJumper(){  
@@ -64,7 +66,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     let firstPlatform = platforms[0].visual
                     firstPlatform.classList.remove('platform')
                     platforms.shift()
-                    console.log(platforms)
+                    score++ //점수 추가
+                    if(score )
+                    console.log(platforms)  //플랫폼 리스트 확인
                     let newPlatform = new Platform(600) //상단에 새 플랫폼 생성
                     platforms.push(newPlatform) //새 플랫폼을 리스트에 삽입
                 }
@@ -73,10 +77,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     /* 게임 종료 */
     function GameOver(){
-        alert("game over")
         isGameOver = true
+        while(grid.firstChild){
+            grid.removeChild(grid.firstChild)
+        }
         clearInterval(upTimerID)
         clearInterval(downTimerID)
+        clearInterval(leftTimerID)
+        clearInterval(rightTimerID)
+        //점수 표시
+        alert("Game Over\nScore : " + score)
     }
     /* 일정 높이 */
     function fall(){
@@ -98,12 +108,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         jumperLeftSpace <= (platform.left + 85) && //platform width 85px
                         !isJumping //falling 중 일때
                         ) {
-                            console.log('landed')
+                            //console.log('landed') //콘솔로 플랫폼에 닿았는지 확인
                             startPoint = jumperBottomSpace
                             jump()
                         }
                 })
-        }, 30)
+        }, ActionTime)
     }
     /* 플랫폼에 닿을 시 점프 */
     function jump() {
@@ -113,64 +123,70 @@ document.addEventListener('DOMContentLoaded', () => {
             function() {
                 jumperBottomSpace += 10
                 jumper.style.bottom = jumperBottomSpace + 'px'
+                //일정 높이 이상으로 올라가면 fall 실행 점퍼의 점프 높이 설정
                 if (jumperBottomSpace > startPoint + 200) {
                     fall()
                 }
-        }, 30)
+        }, ActionTime)
     }
     /* 점퍼 조작 */
     function control(event){
         if(event.key === "ArrowLeft"){
-            moveLeft()
+            moveLeft()      //왼쪽 이동
         }
         else if(event.key ==="ArrowRight"){
-            moveRight()
+            moveRight()     //오른쪽 이동
         }
         else if(event.key ==="ArrowUp"){
-            moveUp()
+            moveUp()        //제자리이동 좌우 이동 멈춤
         }
     }
-    function moveUp(){
+    /* 윗 방향키 누를 시 */
+    function moveUp(){ 
+        //좌우동작을 멈추고 제자리에서 멈춤
         MovingLeft = false
         MovingRight = false
         clearInterval(leftTimerID)
         clearInterval(rightTimerID)
-
     }
-    /* 왼쪽으로 조작 시 */
+    /* 왼쪽 방향키 누를 시 */
     function moveLeft(){
-        //이전에 오른쪽으로 움직임 해제 jumper가 계속 떠는 현상 제거
+        //오른쪽 움직임 제거
         if(MovingRight){
             clearInterval(rightTimerID)
             MovingRight = false
         }
         MovingLeft = true
-        leftTimerID = setInterval(function() {
-            //왼쪽 벽에 부딪히지 않을때까지 왼쪽 이동
-            if(jumperLeftSpace >= 0) {
-                jumperLeftSpace -= 5
-                jumper.style.left = jumperLeftSpace + 'px'
-            }
-            //왼쪽 벽에 부딪힐 시 오른쪽으로 이동(팅김)
-            else moveRight()
-        }, 30) 
+        leftTimerID = setInterval(
+            function() {
+                //왼쪽 벽에 부딪히지 않을때까지 왼쪽 이동
+                if(jumperLeftSpace >= 0) {
+                    jumperLeftSpace -= 5
+                    jumper.style.left = jumperLeftSpace + 'px'
+                }
+                //왼쪽 벽에 부딪힐 시 오른쪽으로 이동(팅김)
+                else moveRight()
+        }, ActionTime) 
     }
 
+    /* 오른쪽 방향키를 누를 시 */
     function moveRight(){
+        //왼쪽 움직임 제거
         if(MovingLeft){
             clearInterval(leftTimerID)
             MovingLeft = false
         }
         MovingRight = true
-        rightTimerID = setInterval(function() {
-            //오른쪽 벽에 부딪히기 전까지 오른쪽 이동
-            if(jumperLeftSpace <= 340) {
-                jumperLeftSpace += 5
-                jumper.style.left = jumperLeftSpace + 'px'
-            }
-            //오른쪽 벽에 부딪힐 시 왼쪽으로 이동
-            else moveLeft()
-        }, 30) 
+        rightTimerID = setInterval(
+                function() {
+                //오른쪽 벽에 부딪히기 전까지 오른쪽 이동
+                if(jumperLeftSpace <= 340) {
+                    jumperLeftSpace += 5
+                    jumper.style.left = jumperLeftSpace + 'px'
+                }
+                //오른쪽 벽에 부딪힐 시 왼쪽으로 이동
+                else moveLeft()
+            }, ActionTime)
     }
 
     /* 게임 시작 함수 */
@@ -178,12 +194,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isGameOver) {
             createPlatforms()
             createJumper()
-            setInterval(movePlatforms, 30)
+            setInterval(movePlatforms, ActionTime)
             jump()
             document.addEventListener('keyup', control)
         } 
     }
-    
-    start()
 
+    //게임 시작
+    start()
 })
