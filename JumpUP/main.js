@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid')
+    const scoreboard = document.querySelector('.scoreboard')
     const jumper = document.createElement('div')
 
     let jumperLeftSpace = 50    //jumper 왼쪽 공간값
@@ -10,13 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let platforms = []          //플랫폼 리스트
     let upTimerID               //점프시간
     let downTimerID             //추락시간
-    let leftTimerID             
-    let rightTimerID
-    let isJumping = true
-    let MovingLeft = false
-    let MovingRight = false
-    let score = 0
-    let ActionTime = 20         //setInterval 시간 조절
+    let leftTimerID             //
+    let rightTimerID            //
+    let isJumping = true        //점프중인지 확인
+    let MovingLeft = false      //왼쪽 이동확인
+    let MovingRight = false     //오른쪽 이동 확인
+    let score = 0               //점수
+    let ActionTime = 35         //setInterval 시간 조절
 
     /* jumper를 그리드에 생성 */
     function createJumper(){  
@@ -55,10 +56,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     /* 아래로 이동하는 플랫폼 */
     function movePlatforms(){
-        //200 이상으로 올라가면 플랫폼이 움직이기 시작한다.
+        //점퍼가 높이 200으로 올라가면 플랫폼이 움직이기 시작한다.
         if(jumperBottomSpace > 200){ 
             platforms.forEach(platform => {
-                platform.bottom -= 4
+                platform.bottom -= 4    //플랫폼 하강속도
                 let visual = platform.visual
                 visual.style.bottom = platform.bottom + 'px'
                 /* 플랫폼이 바닥에 닿을 시 */
@@ -67,8 +68,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     firstPlatform.classList.remove('platform')
                     platforms.shift()
                     score++ //점수 추가
-                    if(score )
-                    console.log(platforms)  //플랫폼 리스트 확인
+                    scoreboard.innerHTML = score    //화면에 실시간 점수 출력
+                    if(score % 10 === 0 ) { //10점씩 오를때마다 실행시간 5ms 단축
+                        ActionTime -= 5
+                    }
+                    //console.log(platforms)  //플랫폼 리스트 확인
                     let newPlatform = new Platform(600) //상단에 새 플랫폼 생성
                     platforms.push(newPlatform) //새 플랫폼을 리스트에 삽입
                 }
@@ -108,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         jumperLeftSpace <= (platform.left + 85) && //platform width 85px
                         !isJumping //falling 중 일때
                         ) {
-                            //console.log('landed') //콘솔로 플랫폼에 닿았는지 확인
+                            //console.log('landed') //플랫폼에 닿았는지 확인
                             startPoint = jumperBottomSpace
                             jump()
                         }
@@ -180,7 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
         rightTimerID = setInterval(
                 function() {
                 //오른쪽 벽에 부딪히기 전까지 오른쪽 이동
-                if(jumperLeftSpace <= 340) {
+                if(jumperLeftSpace <= 315) { //grid width(400) - jumper width(85)
                     jumperLeftSpace += 5
                     jumper.style.left = jumperLeftSpace + 'px'
                 }
@@ -192,9 +196,9 @@ document.addEventListener('DOMContentLoaded', () => {
     /* 게임 시작 함수 */
     function start() {
         if (!isGameOver) {
-            createPlatforms()
-            createJumper()
-            setInterval(movePlatforms, ActionTime)
+            createPlatforms()   //플랫폼 생성
+            createJumper()      //점퍼 생성
+            setInterval(movePlatforms, ActionTime) //플랫폼 생성
             jump()
             document.addEventListener('keyup', control)
         } 

@@ -1,9 +1,8 @@
 .grid {
     width: 400px;
     height: 600px;
-    background-color: beige;
-    margin: 0 auto;
-    margin-top: 50px;
+    background-image: url('mario_background.jpg');
+    margin-top: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: relative;
     float: left;
@@ -20,19 +19,22 @@
     width: 400px;
     height: 600px;
     float: left;
+    position: relative;
+    font-size: 100px;
+    text-align: center;
 }
 
 .jumper {
-    width: 60px;
+    width: 85px;
     height: 85px;
-    background-color: red; 
+    background-image: url('mario_jump.png');
     position: absolute;
 }
 
 .platform {
     width: 85px;
     height: 15px;
-    background-color: green;
+    background-image: url('brick_block.png');
     position: absolute;
 }
 
